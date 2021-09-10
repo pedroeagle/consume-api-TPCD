@@ -11,3 +11,5 @@ class Cliente(models.Model):
     c_comment = models.CharField(max_length=117)
     class Meta:
         db_table = 'dss_customer'
+    def __unicode__(self):
+        return self.c_name
