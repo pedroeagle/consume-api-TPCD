@@ -6,8 +6,7 @@ from rest_framework.response import Response
 
 class OrdemView(APIView):
     def get(self, request):
-        ordens = Ordem.objects.all()[:10]
-        print(ordens)
-        serializer = OrdemSerializer(data=ordens)
-        serializer.is_valid()
+        ordens = Ordem.objects.all()[:2]
+        print(len(ordens))
+        serializer = OrdemSerializer(ordens, many=True)
         return Response(serializer.data)
