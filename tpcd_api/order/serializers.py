@@ -1,8 +1,8 @@
 from item.models import Item
 from rest_framework import serializers
 from .models import Order
-from client.serializers import ClientNameSerializer
-from client.models import Client
+from customer.serializers import CustomerNameSerializer
+from customer.models import Customer
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order

@@ -1,6 +1,6 @@
 from django.db import models
 
-class Client(models.Model):
+class Customer(models.Model):
     c_custkey = models.IntegerField(primary_key=True, db_column='c_custkey')
     c_name = models.CharField(max_length=25)
     c_address = models.CharField(max_length=40)

@@ -1,7 +1,7 @@
 from django.db import models
 from order.models import Order
 class Item(models.Model):
-    l_orderkey = models.ForeignKey(Order, primary_key=True, db_column='l_orderkey', related_name='items', on_delete=models.RESTRICT)
+    l_orderkey = models.IntegerField(Order, primary_key=True, db_column='l_orderkey')
     l_partkey = models.IntegerField()
     l_suppkey = models.IntegerField()
     l_linenumber = models.IntegerField()
