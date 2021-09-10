@@ -1,3 +1,8 @@
 .env
 **__pycache__/
 *.pyc
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/tpcd_api.iml
+/.idea/vcs.xml

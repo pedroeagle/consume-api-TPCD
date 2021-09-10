@@ -18,6 +18,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.OrdemView.as_view()),
-    path('<int:ordem>', views.OrdemView.as_view())
+    path('', views.OrderListView.as_view()),
+    path('<int:order>', views.OrderView.as_view())
 ]
