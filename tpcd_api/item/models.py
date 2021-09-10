@@ -1,6 +1,7 @@
 from django.db import models
+from order.models import Order
 class Item(models.Model):
-    l_orderkey = models.IntegerField(primary_key=True, db_column='l_orderkey')
+    l_orderkey = models.ForeignKey(Order, primary_key=True, db_column='l_orderkey', related_name='items', on_delete=models.RESTRICT)
     l_partkey = models.IntegerField()
     l_suppkey = models.IntegerField()
     l_linenumber = models.IntegerField()
@@ -17,4 +18,5 @@ class Item(models.Model):
     l_shipmode = models.CharField(max_length=10)
     l_comment = models.CharField(max_length=44)
     class Meta:
+        unique_together = ['l_orderkey', 'l_linenumber']
         db_table = 'dss_lineitem'
